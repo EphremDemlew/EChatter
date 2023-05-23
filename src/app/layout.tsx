@@ -3,8 +3,8 @@ import { Inter } from "next/font/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "twitter",
-  description: "Get connected with thousands of users",
+  title: "ETwitter",
+  description: "Get connected with thousands of users.",
 };
 
 export default function RootLayout({
