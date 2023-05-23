@@ -1,7 +1,3 @@
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      The Main Section
-    </main>
-  );
+  return <main className="text-xl text-sky-500">The Main Section</main>;
 }
