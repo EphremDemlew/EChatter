@@ -2,6 +2,8 @@ import { Inter } from "next/font/google";
 import "@/styles/global.css";
 import Sidebar from "@/components/layout/Sidebar";
 import FollowBar from "@/components/layout/FollowBar";
+import LoginModal from "@/components/modals/LoginModal";
+import RegisterModal from "@/components/modals/RegisterModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +19,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <LoginModal />
+      <RegisterModal />
       <body className={inter.className}>
         <div className="h-screen bg-black">
           <div className="container h-full mx-auto xl:px-26 max-w-6xl">
