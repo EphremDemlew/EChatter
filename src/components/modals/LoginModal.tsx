@@ -1,10 +1,9 @@
 "use client";
+import useRegisterModal from "@/hooks/useRegisterModal";
 import useLoginModal from "@/hooks/useLoginModal";
 import { FC, useState, useCallback } from "react";
 import Input from "../Input";
 import Modal from "../Modal";
-import RegisterModal from "./RegisterModal";
-import useRegisterModal from "@/hooks/useRegisterModal";
 
 interface LoginModalProps {}
 
