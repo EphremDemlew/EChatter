@@ -4,7 +4,8 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getSession } from "next-auth/react";
 
 const serverAuth = async (req: Request) => {
-  const session = await getSession(req);
+  const sessionReq = req.headers.get("session");
+  const session = await getSession(sessionReq as string | null);
 
   if (!session?.user?.email) {
     throw new Error("Not signed in");
