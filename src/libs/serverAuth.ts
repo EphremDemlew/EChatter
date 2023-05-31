@@ -15,10 +15,10 @@ const serverAuth = async (req: Request) => {
   //   };
   // };
 
-  const res = { getHeader() {}, setCookie() {}, setHeader() {} };
+  // const res = { getHeader() {}, setCookie() {}, setHeader() {} };
 
   // @ts-ignore - The type used in next-auth for the req object doesn't match, but it still works
-  const session = await originalGetServerSession(req, res, authOptions);
+  const session = await originalGetServerSession(req, authOptions);
 
   if (!session?.user?.email) {
     throw new Error("Not signed in");
