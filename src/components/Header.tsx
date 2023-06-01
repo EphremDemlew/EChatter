@@ -31,7 +31,6 @@ const Header: React.FC<HeaderProps> = ({ label, showBackArrow }) => {
       </div>
     </div>
   );
-  showBackArrow;
 };
 
 export default Header;
