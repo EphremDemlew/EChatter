@@ -5,7 +5,7 @@ import { getSession } from "next-auth/react";
 
 const serverAuth = async (req: Request) => {
   const sessionReq = req.headers.get("session");
-  const session = await getSession(sessionReq as string | null);
+  const session = await getSession();
 
   if (!session?.user?.email) {
     throw new Error("Not signed in");
