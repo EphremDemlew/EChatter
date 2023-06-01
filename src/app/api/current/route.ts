@@ -10,6 +10,6 @@ export async function GET(req: Request) {
     new Response(JSON.stringify(currentUser), { status: 200 });
   } catch (error) {
     console.log(error);
-    new Response("Invalid Request", { status: 500 });
+    new Response("Invalid Request", { status: 400 });
   }
 }

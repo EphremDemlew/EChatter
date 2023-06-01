@@ -1,10 +1,10 @@
-import { cookies, headers } from "next/headers";
 import prisma from "@/libs/prismadb";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getSession } from "next-auth/react";
 
 const serverAuth = async (req: Request) => {
   const session = await getSession();
+
+  console.log("The session is ===> ", session);
 
   if (!session?.user?.email) {
     throw new Error("Not signed in");
@@ -19,7 +19,7 @@ const serverAuth = async (req: Request) => {
   if (!currentUser) {
     throw new Error("Not signed in");
   }
-
+  req;
   return { currentUser };
 };
 
