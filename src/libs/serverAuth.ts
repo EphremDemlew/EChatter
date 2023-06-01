@@ -4,7 +4,6 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getSession } from "next-auth/react";
 
 const serverAuth = async (req: Request) => {
-  const sessionReq = req.headers.get("session");
   const session = await getSession();
 
   if (!session?.user?.email) {
