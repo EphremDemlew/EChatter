@@ -45,14 +45,12 @@ const Sidebar = () => {
               />
             );
           })}
-          {currentUser ? (
+          {currentUser && (
             <SidebarItem
               onClick={() => signOut()}
               icon={BiLogOut}
               label="Logout"
             />
-          ) : (
-            ""
           )}
           <SidebarTweetBtn />
         </div>

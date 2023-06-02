@@ -5,14 +5,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 const serverAuth = async (req: Request) => {
   const session = await getServerSession(authOptions);
 
-  console.log(
-    "🚀 ~ file: serverAuth.ts:7 ~ serverAuth ~ session:",
-    session?.user?.email
-  );
-
   if (!session?.user?.email) {
-    console.log("The Error is first");
-
     throw new Error("Not signed in try again.");
   }
 
@@ -23,8 +16,6 @@ const serverAuth = async (req: Request) => {
   });
 
   if (!currentUser) {
-    console.log("The Error is current user");
-
     throw new Error("Not signed in");
   }
   return { currentUser };
