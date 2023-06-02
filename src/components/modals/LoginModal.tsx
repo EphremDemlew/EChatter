@@ -4,7 +4,7 @@ import useLoginModal from "@/hooks/useLoginModal";
 import { FC, useState, useCallback } from "react";
 import Input from "../Input";
 import Modal from "../Modal";
-
+import { signIn } from "next-auth/react";
 interface LoginModalProps {}
 
 const LoginModal: FC<LoginModalProps> = ({}) => {
@@ -25,7 +25,8 @@ const LoginModal: FC<LoginModalProps> = ({}) => {
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
-      //   Todo Add Login
+
+      await signIn("credentials", { email, password });
 
       loginModal.onClose();
     } catch (error) {
@@ -33,7 +34,7 @@ const LoginModal: FC<LoginModalProps> = ({}) => {
     } finally {
       setIsLoading(false);
     }
-  }, [loginModal]);
+  }, [loginModal, password, email]);
 
   const bodyContent = (
     <div className="flex flex-col gap-4 ">
@@ -45,6 +46,7 @@ const LoginModal: FC<LoginModalProps> = ({}) => {
       />
       <Input
         placeHolder="Password"
+        type="password"
         onChange={(e) => setPassword(e.target.value)}
         value={password}
         disabled={isLoading}
