@@ -21,7 +21,7 @@ export async function GET(req: Request) {
       },
     });
 
-    return NextResponse.json(user, { status: 200 });
+    return NextResponse.json({ user, followersCount }, { status: 200 });
   } catch (error) {
     NextResponse.json(error, { status: 400 });
   }
