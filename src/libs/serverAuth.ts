@@ -7,10 +7,12 @@ const serverAuth = async (req: Request) => {
 
   console.log(
     "🚀 ~ file: serverAuth.ts:7 ~ serverAuth ~ session:",
-    await req.json()
+    session?.user?.email
   );
 
   if (!session?.user?.email) {
+    console.log("The Error is first");
+
     throw new Error("Not signed in try again.");
   }
 
@@ -21,9 +23,10 @@ const serverAuth = async (req: Request) => {
   });
 
   if (!currentUser) {
+    console.log("The Error is current user");
+
     throw new Error("Not signed in");
   }
-  req;
   return { currentUser };
 };
 
