@@ -21,8 +21,9 @@ export async function GET(req: Request) {
       },
     });
 
-    return NextResponse.json({ user, followersCount }, { status: 200 });
+    return NextResponse.json({ ...user, followersCount }, { status: 200 });
   } catch (error) {
+    console.log("🚀 ~ file: route.ts:26 ~ GET ~ error:", error);
     NextResponse.json(error, { status: 400 });
   }
 }
