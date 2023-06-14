@@ -1,9 +1,11 @@
 import { NextResponse } from "next/server";
 import prisma from "@/libs/prismadb";
 
-export async function GET(req: Request) {
-  const { searchParams } = new URL(req.url);
-  const userId = searchParams.get("userId");
+export async function GET(
+  req: Request,
+  { params }: { params: { userId: string } }
+) {
+  const userId = params.userId;
 
   try {
     if (!userId || typeof userId !== "string") {
