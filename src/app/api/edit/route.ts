@@ -5,9 +5,9 @@ import prisma from "@/libs/prismadb";
 export default async function PATCH(req: NextRequest) {
   try {
     const { currentUser } = await serverAuth(req);
-    NextResponse;
 
     const { name, username, bio, profileImage, coverImage } = await req.json();
+
     if (!name || !username) {
       throw new Error("Missing fields");
     }
@@ -21,7 +21,6 @@ export default async function PATCH(req: NextRequest) {
 
     return NextResponse.json(updatedUser, { status: 200 });
   } catch (error) {
-    error;
     console.log("🚀 ~ file: route.ts:9 ~ PATCH ~ error:", error);
     return NextResponse.json({ error: "Error" }, { status: 400 });
   }
