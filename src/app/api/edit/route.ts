@@ -2,7 +2,7 @@ import serverAuth from "@/libs/serverAuth";
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/libs/prismadb";
 
-export default async function PATCH(req: NextRequest) {
+export async function PATCH(req: NextRequest) {
   try {
     const { currentUser } = await serverAuth(req);
 
@@ -25,4 +25,3 @@ export default async function PATCH(req: NextRequest) {
     return NextResponse.json({ error: "Error" }, { status: 400 });
   }
 }
-NextResponse;

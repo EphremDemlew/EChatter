@@ -4,6 +4,8 @@ import Sidebar from "@/components/layout/Sidebar";
 import FollowBar from "@/components/layout/FollowBar";
 import LoginModal from "@/components/modals/LoginModal";
 import RegisterModal from "@/components/modals/RegisterModal";
+import EditModal from "@/components/modals/EditModal";
+
 import { Toaster } from "react-hot-toast";
 import Provider from "@/components/Provider";
 
@@ -25,6 +27,7 @@ export default function RootLayout({
         <Provider>
           <Toaster />
           <LoginModal />
+          <EditModal />
           <RegisterModal />
           <div className="h-screen bg-black">
             <div className="container h-full mx-auto xl:px-26 max-w-6xl">
