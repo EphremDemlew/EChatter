@@ -7,7 +7,6 @@ export async function GET(
 ) {
   try {
     const postId = params.postId;
-    console.log("🚀 ~ file: route.ts:8 ~ GET ~ postId:", postId);
 
     if (!postId || typeof postId !== "string") {
       throw new Error("Invalid Id");
