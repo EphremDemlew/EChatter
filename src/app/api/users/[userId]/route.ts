@@ -22,6 +22,10 @@ export async function GET(
         followingIds: { has: userId },
       },
     });
+    // console.log("🚀 ~ file: route.ts:25 ~ followersCount:", {
+    //   ...user,
+    //   followersCount,
+    // });
 
     return NextResponse.json({ ...user, followersCount }, { status: 200 });
   } catch (error) {

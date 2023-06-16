@@ -2,9 +2,13 @@ import serverAuth from "@/libs/serverAuth";
 import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/libs/prismadb";
 
-export async function POST(req: NextRequest, res: NextResponse) {
+export async function DELETE(
+  req: NextRequest,
+  { params }: { params: { userId: string } }
+) {
   try {
-    const { userId } = await req.json();
+    const userId = params.userId;
+
     const { currentUser } = await serverAuth(req);
 
     if (!userId || typeof userId !== "string") {
@@ -19,17 +23,10 @@ export async function POST(req: NextRequest, res: NextResponse) {
     }
 
     let updatedFollowingIds = [...(user.followingIds || [])];
-    updatedFollowingIds.push(userId);
 
-    if (!userId || typeof userId !== "string") {
-      throw new Error("Invalid Id");
-    }
-    if (!userId || typeof userId !== "string") {
-      throw new Error("Invalid Id");
-    }
-    if (!userId || typeof userId !== "string") {
-      throw new Error("Invalid Id");
-    }
+    updatedFollowingIds = updatedFollowingIds.filter(
+      (followingId) => followingId !== userId
+    );
 
     const updatedUser = await prisma.user.update({
       where: {
@@ -46,4 +43,3 @@ export async function POST(req: NextRequest, res: NextResponse) {
     return NextResponse.json({ error: error }, { status: 400 });
   }
 }
-
