@@ -27,8 +27,7 @@ export async function GET({
   searchParams: { userId: string };
 }) {
   try {
-    const userId = searchParams.userId;
-
+    const userId = searchParams?.userId;
     let posts;
     if (userId && typeof userId === "string") {
       posts = await prisma.post.findMany({
@@ -45,7 +44,7 @@ export async function GET({
 
     return NextResponse.json(posts, { status: 200 });
   } catch (error) {
-    console.log("🚀 ~ file: route.ts:7 ~ POST ~ error:", error);
+    console.log("🚀 ~ file: route.ts:48 ~ error:", error);
     return NextResponse.json({ error: error }, { status: 200 });
   }
 }
