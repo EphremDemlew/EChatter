@@ -61,7 +61,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
               placeholder={placeholder}
             ></textarea>
             <hr className="opacity-0 peer-focus:opacity-100 h-[1px] w-full border-neutral-800 transition" />
-            <div className="md-4 flex justify-end">
+            <div className="mt-4 flex justify-end">
               <Button
                 label="Tweet"
                 disabled={isLoading || !body}
