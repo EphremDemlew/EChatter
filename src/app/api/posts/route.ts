@@ -21,13 +21,11 @@ export async function POST(req: NextRequest, res: NextResponse) {
   }
 }
 
-export async function GET({
-  searchParams,
-}: {
-  searchParams: { userId: string };
-}) {
+export async function GET(req: NextRequest) {
   try {
-    const userId = searchParams?.userId;
+    const { searchParams } = new URL(req.url);
+    const userId = searchParams.get("userId");
+
     let posts;
     if (userId && typeof userId === "string") {
       posts = await prisma.post.findMany({

@@ -41,8 +41,6 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
     }
   }, [body, mutatePosts]);
 
-  console.log("Current user is ", currentUser);
-
   return (
     <div className="border-b-[1px] border-neutral-800 px-5 py-2 ">
       {currentUser ? (
