@@ -2,6 +2,7 @@
 
 import Form from "@/components/Form";
 import Header from "@/components/Header";
+import CommentFeed from "@/components/post/CommentFeed";
 import PostItem from "@/components/post/PostItem";
 import usePost from "@/hooks/usePost";
 import { ClipLoader } from "react-spinners";
@@ -26,6 +27,7 @@ const PostView = ({ params }: { params: { postId: string } }) => {
         isComment
         placeholder="Tweet your reply"
       />
+      <CommentFeed comments={fetchedPost?.comments} />
     </>
   );
 };
