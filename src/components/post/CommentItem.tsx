@@ -34,7 +34,7 @@ const CommentItem: React.FC<CommentItemProps> = ({ data }) => {
       <div className="flex items-start gap-3">
         <Avatar userId={data.user.id} />
         <div>
-          <div className="flex items-center-gap-2">
+          <div className="flex items-center gap-2">
             <p
               onClick={goToUser}
               className="text-white font-semibold cursor-pointer hover:underline"
