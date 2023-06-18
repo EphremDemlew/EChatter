@@ -57,13 +57,13 @@ const LoginModal: FC<LoginModalProps> = ({}) => {
   const footerContent = (
     <div className="text-neutral-400 text-center md-4">
       <p>
-        First time using Twitter?
+        Don&apos;t have an account?
         <span
-          className="text-white cursor-pointer hover:underline"
+          className="text-sky-500 cursor-pointer hover:underline font-bold"
           onClick={onToggle}
         >
           {" "}
-          Create an account
+          Sign up
         </span>
       </p>
     </div>
@@ -72,8 +72,9 @@ const LoginModal: FC<LoginModalProps> = ({}) => {
   return (
     <Modal
       disabled={isLoading}
+      hasIcon
       isOpen={loginModal.isOpen}
-      title="Login"
+      title="Sign in to Twitter      "
       actionLabel="Sign in"
       onClose={loginModal.onClose}
       onSubmit={onSubmit}

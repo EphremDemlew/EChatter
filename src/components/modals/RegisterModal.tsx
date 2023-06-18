@@ -79,13 +79,13 @@ const RegisterModal: FC<RegisterModalProps> = ({}) => {
   const footerContent = (
     <div className="text-neutral-400 text-center md-4">
       <p>
-        Already have an account?
+        Have an account already?
         <span
-          className="text-white cursor-pointer hover:underline"
+          className="text-sky-500 cursor-pointer hover:underline font-bold"
           onClick={onToggle}
         >
           {" "}
-          Sign in
+          Log in
         </span>
       </p>
     </div>
@@ -94,9 +94,10 @@ const RegisterModal: FC<RegisterModalProps> = ({}) => {
   return (
     <Modal
       disabled={isLoading}
+      hasIcon
       isOpen={registerModal.isOpen}
-      title="Create an account"
-      actionLabel="Register"
+      title="Join Tweeter today"
+      actionLabel="Create an account"
       onClose={registerModal.onClose}
       onSubmit={onSubmit}
       body={bodyContent}

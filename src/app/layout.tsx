@@ -12,8 +12,11 @@ import Provider from "@/components/Provider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "ETwitter",
+  title: "Twitter",
   description: "Get connected with thousands of users.",
+  icons: {
+    icon: "favicon.ico",
+  },
 };
 
 export default function RootLayout({

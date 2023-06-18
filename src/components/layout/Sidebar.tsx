@@ -9,6 +9,7 @@ import SidebarItem from "./SidebarItem";
 import SidebarLogo from "./SidebarLogo";
 import SidebarTweetBtn from "./ SidebarTweetBtn";
 import { signOut } from "next-auth/react";
+import HomeIcon from "../../../public/Icons/HomeIcon.svg";
 
 const Sidebar = () => {
   const { data: currentUser } = useCurrentUser();
