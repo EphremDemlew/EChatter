@@ -2,12 +2,15 @@
 
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useNotifications from "@/hooks/useNotifications";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { BsTwitter } from "react-icons/bs";
+import { formatDistanceToNowStrict } from "date-fns";
 
 const NotificationsFeed = () => {
   const { data: currentUser, mutate: mutateCurrentUser } = useCurrentUser();
-  const { data: fetchedNotifications = [] } = useNotifications(currentUser?.id);
+  const { data: fetchedNotifications = [] } = useNotifications(
+    currentUser?.currentUser?.id
+  );
 
   useEffect(() => {
     mutateCurrentUser();
@@ -20,6 +23,7 @@ const NotificationsFeed = () => {
       </div>
     );
   }
+
   return (
     <div className="flex flex-col">
       {fetchedNotifications.map((notification: Record<string, any>) => (
@@ -29,6 +33,11 @@ const NotificationsFeed = () => {
         >
           <BsTwitter size={32} color="white" />
           <p className="text-white">{notification.body}</p>
+          <p className="text-neutral-500">
+            {`${formatDistanceToNowStrict(
+              new Date(notification.createdAt)
+            )} ago ` || ""}
+          </p>
         </div>
       ))}
     </div>

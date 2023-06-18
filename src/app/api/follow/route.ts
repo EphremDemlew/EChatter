@@ -24,12 +24,6 @@ export async function POST(req: NextRequest, res: NextResponse) {
     if (!userId || typeof userId !== "string") {
       throw new Error("Invalid Id");
     }
-    if (!userId || typeof userId !== "string") {
-      throw new Error("Invalid Id");
-    }
-    if (!userId || typeof userId !== "string") {
-      throw new Error("Invalid Id");
-    }
 
     const updatedUser = await prisma.user.update({
       where: {
@@ -40,10 +34,25 @@ export async function POST(req: NextRequest, res: NextResponse) {
       },
     });
 
+    try {
+      await prisma.notification.create({
+        data: {
+          body: "Someone followed you!",
+          userId,
+        },
+      });
+
+      await prisma.user.update({
+        where: { id: userId },
+        data: { hasNotification: true },
+      });
+    } catch (error) {
+      console.log("🚀 ~ file: route.ts:56 ~ POST ~ error:", error);
+    }
+
     return NextResponse.json(updatedUser, { status: 200 });
   } catch (error) {
     console.log("🚀 ~ file: route.ts:7 ~ POST ~ error:", error);
     return NextResponse.json({ error: error }, { status: 400 });
   }
 }
-
