@@ -10,6 +10,7 @@ import SidebarLogo from "./SidebarLogo";
 import SidebarTweetBtn from "./ SidebarTweetBtn";
 import { signOut } from "next-auth/react";
 import HomeIcon from "../../../public/Icons/HomeIcon.svg";
+import Avatar from "../Avatar";
 
 const Sidebar = () => {
   const { data: currentUser } = useCurrentUser();
@@ -35,7 +36,7 @@ const Sidebar = () => {
     },
   ];
   return (
-    <div className=" fixed ">
+    <div className="fixed flex flex-col justify-between  h-screen">
       <div className="flex flex-col items-end">
         <div className="space-y-2 lg:w-[230px]">
           <SidebarLogo />
@@ -61,8 +62,20 @@ const Sidebar = () => {
           <SidebarTweetBtn />
         </div>
       </div>
+      {currentUser && (
+        <div className="flex gap-4 mb-5">
+          <Avatar userId={currentUser?.currentUser?.id} />
+          <div className="flex flex-col">
+            <p className="text-white font-semibold text-sm">
+              {currentUser?.currentUser?.name}
+            </p>
+            <p className="text-neutral-400  text-sm">
+              @{currentUser?.currentUser?.username}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
-
 export default Sidebar;

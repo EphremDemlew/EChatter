@@ -74,7 +74,7 @@ const LoginModal: FC<LoginModalProps> = ({}) => {
       disabled={isLoading}
       hasIcon
       isOpen={loginModal.isOpen}
-      title="Sign in to Twitter      "
+      title="Sign in to EChatter"
       actionLabel="Sign in"
       onClose={loginModal.onClose}
       onSubmit={onSubmit}

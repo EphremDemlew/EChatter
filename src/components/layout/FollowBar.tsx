@@ -15,7 +15,7 @@ function FollowBar() {
         <BiSearch size={28} color="gray" className="ml-3" />
         <input
           type="text"
-          placeholder="Search Twitter"
+          placeholder="Search EChatters"
           name=""
           id=""
           className="px-4 py-2 outline-none overflow-hidden bg-[#16181C] text-white "
