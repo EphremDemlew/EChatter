@@ -32,14 +32,18 @@ export default function RootLayout({
           <LoginModal />
           <EditModal />
           <RegisterModal />
-          <div className="h-screen bg-black">
+          <div className="h-screen bg-black overflow-y-scroll scrollbar-hide">
             <div className="container h-full mx-auto xl:px-26 max-w-6xl">
-              <div className="grid grid-cols-4 h-full">
-                <Sidebar />
-                <div className="col-span-3 lg:col-span-2 border-x-[1px] border-neutral-800">
+              <div className="grid grid-cols-4 h-full  ">
+                <div className="col-span-1 h-screen pr-4 md:pr-6 flex justify-end">
+                  <Sidebar />
+                </div>
+                <div className="col-span-3 lg:col-span-2 border-x-[1px] border-neutral-800 overflow-visible">
                   {children}
                 </div>
-                <FollowBar />
+                <div>
+                  <FollowBar />
+                </div>
               </div>
             </div>
           </div>
