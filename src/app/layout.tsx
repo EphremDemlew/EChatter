@@ -15,7 +15,7 @@ export const metadata = {
   title: "Twitter",
   description: "Get connected with thousands of users.",
   icons: {
-    icon: "favicon.ico",
+    icon: "/favicon.ico",
   },
 };
 
