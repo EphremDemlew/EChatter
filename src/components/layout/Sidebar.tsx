@@ -81,7 +81,7 @@ const Sidebar = () => {
           <SidebarTweetBtn />
         </div>
       </div>
-      <div>
+      <div className="flex flex-col justify-center items-center">
         <div className="m-10  h-5">
           <Switch
             checked={theme == "dark" ? true : false}
@@ -90,21 +90,25 @@ const Sidebar = () => {
             {({ checked }) => (
               <button
                 className={`${
-                  checked ? "  bg-orange-500 " : "bg-sky-900 "
-                }   items-center rounded-full flex justify-between w-32 h-8`}
+                  checked ? "  lg:bg-orange-500 " : "bg-sky-900 "
+                }   items-center rounded-full flex justify-between w-auto lg:w-32 h-8`}
               >
                 <Image
                   src={sun}
                   alt="sun.jpg"
                   className={`${
-                    theme == "dark" ? "h-12 w-12 -ml-2" : "h-5 w-5 ml-2"
+                    theme == "dark"
+                      ? "h-12 w-12 lg:-ml-2"
+                      : "h-5 w-5 ml-2 hidden lg:block"
                   }  cursor-pointer transition duration-200 `}
                 />
                 <Image
                   src={halfMoon}
                   alt="halfMoon.jpg"
                   className={`${
-                    theme == "light" ? "h-12 w-12" : "h-5 w-5 mx-2"
+                    theme == "light"
+                      ? "h-12 w-12"
+                      : "h-5 w-5 mx-2 hidden lg:block"
                   }  cursor-pointer transition duration-200 `}
                 />
               </button>
