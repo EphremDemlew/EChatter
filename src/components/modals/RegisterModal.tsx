@@ -81,7 +81,7 @@ const RegisterModal: FC<RegisterModalProps> = ({}) => {
       <p>
         Have an account already?
         <span
-          className="text-sky-500 cursor-pointer hover:underline font-bold"
+          className="text-orange-500 cursor-pointer hover:underline font-bold"
           onClick={onToggle}
         >
           {" "}

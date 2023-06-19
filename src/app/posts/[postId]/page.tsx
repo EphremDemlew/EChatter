@@ -14,18 +14,18 @@ const PostView = ({ params }: { params: { postId: string } }) => {
   if (isLoading || !fetchedPost) {
     return (
       <div className="flex justify-center items-center h-full">
-        <ClipLoader color="lightblue" size={80} />
+        <ClipLoader color="orange" size={80} />
       </div>
     );
   }
   return (
     <>
-      <Header label="Tweet" showBackArrow />
+      <Header label="Echatter" showBackArrow />
       <PostItem data={fetchedPost} />
       <Form
         postId={postId as string}
         isComment
-        placeholder="Tweet your reply"
+        placeholder="Chatter your reply"
       />
       <CommentFeed comments={fetchedPost?.comments} />
     </>

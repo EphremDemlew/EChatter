@@ -18,17 +18,21 @@ function FollowBar() {
           placeholder="Search EChatters"
           name=""
           id=""
-          className="px-4 py-2 outline-none overflow-hidden bg-[#16181C] text-white "
+          className="px-4 py-2 outline-none overflow-hidden bg-[#16181C] text-black dark:text-white  "
         />
       </div>
       <div className="bg-[#16181C] rounded-xl p-4 w-72">
-        <h1 className="text-white text-xl font-semibold">Who to follow</h1>
+        <h1 className="text-black dark:text-white  text-xl font-semibold">
+          Who to follow
+        </h1>
         <div className="flex flex-col gap-6 mt-4">
           {users.map((user: Record<string, any>) => (
             <div key={user.id} className="flex gap-4 ">
               <Avatar userId={user.id} />
               <div className="flex flex-col">
-                <p className="text-white font-semibold text-sm">{user.name}</p>
+                <p className="text-black dark:text-white  font-semibold text-sm">
+                  {user.name}
+                </p>
                 <p className="text-neutral-400  text-sm">@{user.username}</p>
               </div>
             </div>

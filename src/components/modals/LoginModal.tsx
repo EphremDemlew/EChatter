@@ -59,7 +59,7 @@ const LoginModal: FC<LoginModalProps> = ({}) => {
       <p>
         Don&apos;t have an account?
         <span
-          className="text-sky-500 cursor-pointer hover:underline font-bold"
+          className="text-orange-500 cursor-pointer hover:underline font-bold"
           onClick={onToggle}
         >
           {" "}

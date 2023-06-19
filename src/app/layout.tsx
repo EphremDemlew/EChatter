@@ -8,6 +8,8 @@ import EditModal from "@/components/modals/EditModal";
 
 import { Toaster } from "react-hot-toast";
 import Provider from "@/components/Provider";
+import { ThemeProvider } from "next-themes";
+import Theme from "@/components/Theme";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +17,7 @@ export const metadata = {
   title: "EChatter",
   description: "Get connected with thousands of users.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.svg",
   },
 };
 
@@ -28,25 +30,27 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Provider>
-          <Toaster />
-          <LoginModal />
-          <EditModal />
-          <RegisterModal />
-          <div className="h-screen bg-black overflow-y-scroll scrollbar-hide">
-            <div className="container h-full mx-auto xl:px-26 max-w-6xl">
-              <div className="grid grid-cols-4 h-full  ">
-                <div className="col-span-1 h-screen pr-4 md:pr-6 flex justify-end">
-                  <Sidebar />
-                </div>
-                <div className="col-span-3 lg:col-span-2 border-x-[1px] border-neutral-800 overflow-visible">
-                  {children}
-                </div>
-                <div>
-                  <FollowBar />
+          <Theme>
+            <Toaster />
+            <LoginModal />
+            <EditModal />
+            <RegisterModal />
+            <div className="h-screen bg-white dark:bg-black overflow-y-scroll scrollbar-hide">
+              <div className="container h-full mx-auto xl:px-26 max-w-6xl">
+                <div className="grid grid-cols-4 h-full  ">
+                  <div className="col-span-1 h-screen pr-4 md:pr-6 flex justify-end">
+                    <Sidebar />
+                  </div>
+                  <div className="col-span-3 lg:col-span-2 border-x-[1px] border-neutral-800 overflow-visible">
+                    {children}
+                  </div>
+                  <div>
+                    <FollowBar />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Theme>
         </Provider>
       </body>
     </html>

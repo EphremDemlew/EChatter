@@ -9,3 +9,7 @@
 body {
   @apply h-full bg-black;
 }
+
+.orange_gradient {
+  @apply bg-gradient-to-r from-amber-500 via-orange-500 to-orange-700;
+}

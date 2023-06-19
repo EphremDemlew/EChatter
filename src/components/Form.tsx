@@ -34,7 +34,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
 
       await axios.post(url, { body });
 
-      toast.success("Tweet Created");
+      toast.success("Chatter Created");
 
       setBody("");
       mutatePosts();
@@ -52,7 +52,6 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
         <div className="flex gap-4">
           <div>
             <Avatar userId={currentUser?.currentUser?.id} />
-            currentUser
           </div>
           <div className="w-full">
             <textarea
@@ -60,13 +59,13 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
               onChange={(e) => setBody(e.target.value)}
               value={body}
               className="disabled:opacity-80 peer resize-none mt-4 ring-0 w-full bg-black 
-              outline-none text-[20px] placeholder-neutral-500 text-white"
+              outline-none text-[20px] placeholder-neutral-500 text-black dark:text-white "
               placeholder={placeholder}
             ></textarea>
             <hr className="opacity-0 peer-focus:opacity-100 h-[1px] w-full border-neutral-800 transition" />
             <div className="mt-4 flex justify-end">
               <Button
-                label="Tweet"
+                label="Chatter"
                 disabled={isLoading || !body}
                 onClick={onSubmit}
               />
@@ -75,7 +74,7 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
         </div>
       ) : (
         <div className="py-8 ">
-          <h1 className="text-white text-2xl text-center mb-4 font-bold">
+          <h1 className="text-black dark:text-white  text-2xl text-center mb-4 font-bold">
             Welcome to EChatter
           </h1>
           <div className="flex items-center justify-center gap-4">

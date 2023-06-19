@@ -37,7 +37,7 @@ const CommentItem: React.FC<CommentItemProps> = ({ data }) => {
           <div className="flex items-center gap-2">
             <p
               onClick={goToUser}
-              className="text-white font-semibold cursor-pointer hover:underline"
+              className="text-black dark:text-white  font-semibold cursor-pointer hover:underline"
             >
               {data.user.name}
             </p>
@@ -49,7 +49,7 @@ const CommentItem: React.FC<CommentItemProps> = ({ data }) => {
             </span>
             <span className="text-neutral-500 text-sm">{createdAt}</span>
           </div>
-          <div className="text-white mt-1">{data.body}</div>
+          <div className="text-black dark:text-white  mt-1">{data.body}</div>
         </div>
       </div>
     </div>

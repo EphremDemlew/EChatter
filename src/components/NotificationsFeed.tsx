@@ -32,7 +32,7 @@ const NotificationsFeed = () => {
           className="flex items-center p-5 gap-4 border-b-[1px] border-neutral-800"
         >
           <BsTwitter size={32} color="white" />
-          <p className="text-white">{notification.body}</p>
+          <p className="text-black dark:text-white ">{notification.body}</p>
           <p className="text-neutral-500">
             {`${formatDistanceToNowStrict(
               new Date(notification.createdAt)

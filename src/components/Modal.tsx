@@ -51,17 +51,19 @@ const Modal: React.FC<ModalProps> = ({
             {/* Header */}
             {hasIcon && (
               <div className="w-full  flex justify-center -mb-5 mt-10">
-                <BsTwitter size={36} className="text-sky-500" />
+                <BsTwitter size={36} className="text-orange-500" />
               </div>
             )}
             <button
-              className="absolute left-1 top-1 p-1 ml-auto border-0 text-white hover:opacity-70 transition"
+              className="absolute left-1 top-1 p-1 ml-auto border-0 text-black dark:text-white  hover:opacity-70 transition"
               onClick={handleClose}
             >
               <IoIosClose size={34} />
             </button>
             <div className="flex items-center justify-center p-10 rounded-t ">
-              <h3 className="text-3xl font-semibold text-white">{title}</h3>
+              <h3 className="text-3xl font-semibold text-black dark:text-white ">
+                {title}
+              </h3>
             </div>
             {/* Body */}
             <div className="relative px-10 py-5 flex-auto">{body}</div>
