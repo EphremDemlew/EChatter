@@ -16,6 +16,7 @@ import sun from "@/assets/images/sun.png";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { Switch } from "@headlessui/react";
 
 const Sidebar = () => {
   const { data: currentUser } = useCurrentUser();
@@ -81,24 +82,39 @@ const Sidebar = () => {
         </div>
       </div>
       <div>
-        <p className="m-10">
-          <Image
-            src={halfMoon}
-            alt="half-moon.jpg"
-            className="w-8 cursor-pointer dark:hidden"
-            onClick={() => setTheme("dark")}
-          />
-          <Image
-            src={sun}
-            alt="half-moon.jpg"
-            className="w-8 cursor-pointer hidden dark:block"
-            onClick={() => setTheme("light")}
-          />
-        </p>
+        <div className="m-10  h-5">
+          <Switch
+            checked={theme == "dark" ? true : false}
+            onChange={() => setTheme(theme == "dark" ? "light" : "dark")}
+          >
+            {({ checked }) => (
+              <button
+                className={`${
+                  checked ? "  bg-orange-500 " : "bg-sky-900 "
+                }   items-center rounded-full flex justify-between w-32 h-8`}
+              >
+                <Image
+                  src={sun}
+                  alt="sun.jpg"
+                  className={`${
+                    theme == "dark" ? "h-12 w-12 -ml-2" : "h-5 w-5 ml-2"
+                  }  cursor-pointer transition duration-200 `}
+                />
+                <Image
+                  src={halfMoon}
+                  alt="halfMoon.jpg"
+                  className={`${
+                    theme == "light" ? "h-12 w-12" : "h-5 w-5 mx-2"
+                  }  cursor-pointer transition duration-200 `}
+                />
+              </button>
+            )}
+          </Switch>
+        </div>
         {currentUser && (
-          <div className="flex gap-4 mb-5">
+          <div className="flex justify-center  gap-4 mb-5">
             <Avatar userId={currentUser?.currentUser?.id} />
-            <div className="flex flex-col">
+            <div className=" flex-col hidden lg:flex">
               <p className="text-black dark:text-white  font-semibold text-sm">
                 {currentUser?.currentUser?.name}
               </p>
