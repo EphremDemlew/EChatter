@@ -21,7 +21,7 @@ const Input: React.FC<InputProps> = ({
       onChange={onChange}
       placeholder={placeHolder}
       type={type}
-      className="w-full p-4 text-lg bg-black border-2 border-neutral-800 rounded-md outline-none text-black dark:text-white  focus:border-sky-500 focus:border-2 disabled:bg-neutral-900 disabled:opacity-70 disabled:cursor-not-allowed transition"
+      className="w-full p-4 text-lg bg-black border-2 border-neural-400  dark:border-neutral-800 rounded-md outline-none text-black dark:text-white  focus:border-sky-500 focus:border-2 disabled:bg-neutral-900 disabled:opacity-70 disabled:cursor-not-allowed transition"
     />
   );
 };

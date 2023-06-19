@@ -91,7 +91,7 @@ const Sidebar = () => {
               <button
                 className={`${
                   checked ? "  lg:bg-orange-500 " : "bg-sky-900 "
-                }   items-center rounded-full flex justify-between w-auto lg:w-32 h-8`}
+                }   items-center rounded-full flex justify-between w-auto lg:w-28 h-8`}
               >
                 <Image
                   src={sun}

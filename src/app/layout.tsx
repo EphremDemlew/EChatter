@@ -41,7 +41,7 @@ export default function RootLayout({
                   <div className="col-span-1 h-screen pr-4 md:pr-6 flex justify-end">
                     <Sidebar />
                   </div>
-                  <div className="col-span-3 lg:col-span-2 border-x-[1px] border-neutral-800 overflow-visible">
+                  <div className="col-span-3 lg:col-span-2 border-x-[1px] border-neural-400  dark:border-neutral-800 overflow-visible">
                     {children}
                   </div>
                   <div>
