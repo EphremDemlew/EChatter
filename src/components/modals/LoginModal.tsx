@@ -35,11 +35,13 @@ const LoginModal: FC<LoginModalProps> = ({}) => {
         email,
         password,
       });
-      if (!isSigned?.ok) {
+      console.log(
+        "🚀 ~ file: LoginModal.tsx:38 ~ onSubmit ~ isSigned:",
+        isSigned
+      );
+      if (isSigned?.error === "Invalid credentials") {
         setIsError(true);
-      } else {
-        setIsError(false);
-
+        setPassword("");
         toast.custom((t) => (
           <div className="flex bg-red-500 pr-8 pl-3 gap-2 py-3 rounded items-center justify-center">
             <BiErrorCircle className="text-white h-10 w-10" />
@@ -47,15 +49,9 @@ const LoginModal: FC<LoginModalProps> = ({}) => {
               The email address or the password you entered is incorrect.
             </p>
           </div>
-
-          // <div className="flex bg-green-500 pr-8 pl-3 gap-2 py-3 rounded items-center justify-center">
-          //   <BiCheck className="text-white h-8 w-8" />
-          //   <p className="text-white text-base justify-center items-center">
-          //     The email address or the password you entered is incorrect.
-          //   </p>
-          // </div>
         ));
-
+      } else {
+        setIsError(false);
         loginModal.onClose();
       }
     } catch (error) {
@@ -69,7 +65,7 @@ const LoginModal: FC<LoginModalProps> = ({}) => {
   const bodyContent = (
     <div className="flex flex-col gap-4 ">
       {isError && (
-        <div className="flex bg-red-500 pr-8 pl-3 gap-2 py-3 rounded">
+        <div className="flex bg-red-500 pr-8 pl-3 gap-2 py-3 rounded items-center justify-center">
           <BiErrorCircle className="text-white h-10 w-10" />
           <p className="text-white text-sm justify-center items-center">
             The email address or the password you entered is incorrect.
