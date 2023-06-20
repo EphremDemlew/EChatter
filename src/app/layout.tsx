@@ -31,7 +31,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <Provider>
           <Theme>
-            <Toaster />
+            <Toaster position="top-right" />
             <LoginModal />
             <EditModal />
             <RegisterModal />
