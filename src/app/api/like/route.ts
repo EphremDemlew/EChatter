@@ -32,7 +32,7 @@ export async function POST(req: NextRequest) {
       if (post?.userId) {
         await prisma.notification.create({
           data: {
-            body: "Someone liked your tweet!",
+            body: "Someone liked your chatter!",
             userId: post.userId,
           },
         });
@@ -53,4 +53,4 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error }, { status: 400 });
   }
 }
-export const dynamic = "force-dynamic"
+export const dynamic = "force-dynamic";

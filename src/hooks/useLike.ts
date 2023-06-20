@@ -36,7 +36,24 @@ const useLike = ({ postId, userId }: { postId: string; userId?: string }) => {
       mutateFetchedPost();
       mutateFetchedPosts();
 
-      toast.success("Like Successfully Added");
+      // toast.success("Like Successfully Added");
+      if (hasLiked) {
+        toast("Like Removed!", {
+          style: {
+            borderRadius: "10px",
+            background: "#ef4444",
+            color: "#fff",
+          },
+        });
+      } else {
+        toast("Like Added!", {
+          style: {
+            borderRadius: "10px",
+            background: "#22c55e",
+            color: "#fff",
+          },
+        });
+      }
     } catch (error) {
       toast.error("Something went wrong");
     }

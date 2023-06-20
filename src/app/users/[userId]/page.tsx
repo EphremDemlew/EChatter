@@ -5,7 +5,7 @@ import PostFeed from "@/components/post/PostFeed";
 import UserBio from "@/components/users/UserBio";
 import UserHero from "@/components/users/UserHero";
 import useUser from "@/hooks/useUser";
-import { ClipLoader } from "react-spinners";
+import { BsFillChatQuoteFill } from "react-icons/bs";
 
 const UserView = ({ params }: { params: { userId: string } }) => {
   const userId = params.userId;
@@ -15,7 +15,10 @@ const UserView = ({ params }: { params: { userId: string } }) => {
   if (isLoading || !fetchUser || !userId) {
     return (
       <div className="flex justify-center items-center h-full">
-        <ClipLoader size={80} color="lightblue" />
+        <BsFillChatQuoteFill
+          size={50}
+          className="text-orange-400 animate-pulse"
+        />
       </div>
     );
   }

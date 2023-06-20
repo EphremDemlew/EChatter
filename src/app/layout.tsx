@@ -10,6 +10,8 @@ import { Toaster } from "react-hot-toast";
 import Provider from "@/components/Provider";
 import { ThemeProvider } from "next-themes";
 import Theme from "@/components/Theme";
+import { Suspense } from "react";
+import FollowLoading from "@/components/loading/FollowLoading";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -45,7 +47,9 @@ export default function RootLayout({
                     {children}
                   </div>
                   <div>
-                    <FollowBar />
+                    <Suspense fallback={<FollowLoading />}>
+                      <FollowBar />
+                    </Suspense>
                   </div>
                 </div>
               </div>

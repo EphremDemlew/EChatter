@@ -3,7 +3,7 @@
 import useCurrentUser from "@/hooks/useCurrentUser";
 import useNotifications from "@/hooks/useNotifications";
 import { useEffect, useMemo } from "react";
-import { BsTwitter } from "react-icons/bs";
+import { BsFillChatQuoteFill } from "react-icons/bs";
 import { formatDistanceToNowStrict } from "date-fns";
 
 const NotificationsFeed = () => {
@@ -31,7 +31,7 @@ const NotificationsFeed = () => {
           key={notification.id}
           className="flex items-center p-5 gap-4 border-b-[1px] border-neural-400  dark:border-neutral-800"
         >
-          <BsTwitter size={32} color="white" />
+          <BsFillChatQuoteFill size={32} color="white" />
           <p className="text-black dark:text-white ">{notification.body}</p>
           <p className="text-neutral-500">
             {`${formatDistanceToNowStrict(

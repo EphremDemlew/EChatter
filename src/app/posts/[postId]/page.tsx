@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import CommentFeed from "@/components/post/CommentFeed";
 import PostItem from "@/components/post/PostItem";
 import usePost from "@/hooks/usePost";
-import { ClipLoader } from "react-spinners";
+import { BsFillChatQuoteFill } from "react-icons/bs";
 
 const PostView = ({ params }: { params: { postId: string } }) => {
   const postId = params.postId;
@@ -14,13 +14,17 @@ const PostView = ({ params }: { params: { postId: string } }) => {
   if (isLoading || !fetchedPost) {
     return (
       <div className="flex justify-center items-center h-full">
-        <ClipLoader color="orange" size={80} />
+        <BsFillChatQuoteFill
+          size={50}
+          className="text-orange-400 animate-pulse"
+        />
       </div>
     );
   }
   return (
     <>
       <Header label="Echatter" showBackArrow />
+
       <PostItem data={fetchedPost} />
       <Form
         postId={postId as string}
