@@ -22,3 +22,4 @@ const serverAuth = async (req: Request) => {
 };
 
 export default serverAuth;
+export const dynamic = "force-dynamic";
