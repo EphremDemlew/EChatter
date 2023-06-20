@@ -52,7 +52,7 @@ const RegisterModal: FC<RegisterModalProps> = ({}) => {
         <div className="flex bg-red-500 pr-8 pl-3 gap-2 py-3 rounded items-center justify-center">
           <BiErrorCircle className="text-white h-10 w-10" />
           <p className="text-white text-sm justify-center items-center">
-            Something went wrong
+            Please change your credentials and try again.
           </p>
         </div>
       ));
