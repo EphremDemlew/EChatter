@@ -10,3 +10,5 @@ export async function GET(req: Request) {
     return NextResponse.json({ error: "Invalid Request" }, { status: 400 });
   }
 }
+
+export const dynamic = "force-dynamic"

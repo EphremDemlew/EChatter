@@ -25,3 +25,4 @@ export async function PATCH(req: NextRequest) {
     return NextResponse.json({ error: "Error" }, { status: 400 });
   }
 }
+export const dynamic = "force-dynamic"

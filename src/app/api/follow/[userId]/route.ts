@@ -43,3 +43,4 @@ export async function DELETE(
     return NextResponse.json({ error: error }, { status: 400 });
   }
 }
+export const dynamic = "force-dynamic"
