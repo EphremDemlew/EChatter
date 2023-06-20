@@ -77,7 +77,7 @@ const RegisterModal: FC<RegisterModalProps> = ({}) => {
   );
 
   const footerContent = (
-    <div className="text-neutral-400 text-center md-4">
+    <div className="text-neutral-500 dark:text-neutral-400 text-center md-4">
       <p>
         Have an account already?
         <span
@@ -96,7 +96,7 @@ const RegisterModal: FC<RegisterModalProps> = ({}) => {
       disabled={isLoading}
       hasIcon
       isOpen={registerModal.isOpen}
-      title="Join Tweeter today"
+      title="Join EChatter today"
       actionLabel="Create an account"
       onClose={registerModal.onClose}
       onSubmit={onSubmit}

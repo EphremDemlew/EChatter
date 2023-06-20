@@ -55,7 +55,7 @@ const LoginModal: FC<LoginModalProps> = ({}) => {
   );
 
   const footerContent = (
-    <div className="text-neutral-400 text-center md-4">
+    <div className="text-neutral-500 dark:text-neutral-400 text-center md-4">
       <p>
         Don&apos;t have an account?
         <span
