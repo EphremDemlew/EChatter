@@ -7,6 +7,7 @@ import Modal from "../Modal";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { signIn } from "next-auth/react";
+import { BiCheck, BiErrorCircle } from "react-icons/bi";
 
 interface RegisterModalProps {}
 
@@ -34,13 +35,27 @@ const RegisterModal: FC<RegisterModalProps> = ({}) => {
 
       await axios.post("/api/register", { email, password, username, name });
 
-      toast.success("Account created");
+      toast.custom((t) => (
+        <div className="flex bg-green-500 pr-8 pl-3 gap-2 py-3 rounded items-center justify-center">
+          <BiCheck className="text-white h-8 w-8" />
+          <p className="text-white text-base justify-center items-center">
+            Account created
+          </p>
+        </div>
+      ));
 
       signIn("credentials", { email, password });
       registerModal.onClose();
     } catch (error) {
       console.log(error);
-      toast.error("Something went wrong");
+      toast.custom((t) => (
+        <div className="flex bg-red-500 pr-8 pl-3 gap-2 py-3 rounded items-center justify-center">
+          <BiErrorCircle className="text-white h-10 w-10" />
+          <p className="text-white text-sm justify-center items-center">
+            Something went wrong
+          </p>
+        </div>
+      ));
     } finally {
       setIsLoading(false);
     }

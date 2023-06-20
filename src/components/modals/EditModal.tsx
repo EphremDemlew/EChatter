@@ -9,6 +9,7 @@ import { toast } from "react-hot-toast";
 import Modal from "../Modal";
 import Input from "../Input";
 import ImageUpload from "../ImageUpload";
+import { BiCheck, BiErrorCircle } from "react-icons/bi";
 
 const EditModal = () => {
   const { data: currentUser } = useCurrentUser();
@@ -42,11 +43,24 @@ const EditModal = () => {
       });
       mutateFetchedUser();
 
-      toast.success("Profile updated successfully");
-
+      toast.custom((t) => (
+        <div className="flex bg-green-500 pr-8 pl-3 gap-2 py-3 rounded items-center justify-center">
+          <BiCheck className="text-white h-8 w-8" />
+          <p className="text-white text-base justify-center items-center">
+            Profile updated successfully
+          </p>
+        </div>
+      ));
       editModal.onClose();
     } catch (error) {
-      toast.error("Something went wrong. Please try again later.");
+      toast.custom((t) => (
+        <div className="flex bg-red-500 pr-8 pl-3 gap-2 py-3 rounded items-center justify-center">
+          <BiErrorCircle className="text-white h-10 w-10" />
+          <p className="text-white text-sm justify-center items-center">
+            Something went wrong. Please try again later.
+          </p>
+        </div>
+      ));
     } finally {
       setIsLoading(false);
     }

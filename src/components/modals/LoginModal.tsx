@@ -5,7 +5,7 @@ import { FC, useState, useCallback } from "react";
 import Input from "../Input";
 import Modal from "../Modal";
 import { signIn } from "next-auth/react";
-import { BiError, BiErrorCircle } from "react-icons/bi";
+import { BiCheck, BiErrorCircle } from "react-icons/bi";
 import { toast } from "react-hot-toast";
 
 interface LoginModalProps {}
@@ -41,12 +41,19 @@ const LoginModal: FC<LoginModalProps> = ({}) => {
         setIsError(false);
 
         toast.custom((t) => (
-          <div className="flex bg-red-500 pr-8 pl-3 gap-2 py-3 rounded">
+          <div className="flex bg-red-500 pr-8 pl-3 gap-2 py-3 rounded items-center justify-center">
             <BiErrorCircle className="text-white h-10 w-10" />
             <p className="text-white text-sm justify-center items-center">
               The email address or the password you entered is incorrect.
             </p>
           </div>
+
+          // <div className="flex bg-green-500 pr-8 pl-3 gap-2 py-3 rounded items-center justify-center">
+          //   <BiCheck className="text-white h-8 w-8" />
+          //   <p className="text-white text-base justify-center items-center">
+          //     The email address or the password you entered is incorrect.
+          //   </p>
+          // </div>
         ));
 
         loginModal.onClose();
