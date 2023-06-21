@@ -1,11 +1,28 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import prisma from "@/libs/prismadb";
 
-export async function GET() {
+export async function GET(req: NextRequest) {
   try {
-    const users = await prisma.user.findMany({
-      orderBy: { createdAt: "desc" },
-    });
+    const { searchParams } = new URL(req.url);
+    const searchKey = searchParams.get("searchKey");
+
+    let users;
+    if (searchKey && typeof searchKey === "string") {
+      users = await prisma.user.findMany({
+        where: {
+          OR: [
+            { username: { contains: searchKey } },
+            { name: { contains: searchKey } },
+            { email: { contains: searchKey } },
+          ],
+        },
+        orderBy: { createdAt: "desc" },
+      });
+    } else {
+      users = await prisma.user.findMany({
+        orderBy: { createdAt: "desc" },
+      });
+    }
 
     return NextResponse.json(users, { status: 200 });
   } catch (error) {

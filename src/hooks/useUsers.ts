@@ -1,8 +1,12 @@
 import useSWR from "swr";
 import fetcher from "@/libs/fetcher";
 
-const useUsers = () => {
-  const { data, error, isLoading, mutate } = useSWR("/api/users", fetcher);
+const useUsers = (searchKey?: string) => {
+  const url = searchKey?.trim()
+    ? "/api/users"
+    : `/api/users?searchKey=${searchKey}`;
+
+  const { data, error, isLoading, mutate } = useSWR(url, fetcher);
 
   return {
     data,
