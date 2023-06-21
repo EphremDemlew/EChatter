@@ -27,6 +27,8 @@ function FollowBar({ searchKey }: { searchKey: string }) {
       </div>
     );
   } else {
+    if (users.length === 0)
+      return <h1 className="mt-2">Sorry no one with that name is found.</h1>;
     return (
       <div className="flex flex-col gap-6 mt-4">
         {users.slice(0, 5).map((user: Record<string, any>) => (
@@ -41,7 +43,6 @@ function FollowBar({ searchKey }: { searchKey: string }) {
       </div>
     );
   }
-  if (users.length === 0) return <h1>Sorry no one with that name is found.</h1>;
 }
 
 export default FollowBar;
