@@ -68,19 +68,21 @@ const Modal: React.FC<ModalProps> = ({
             {/* Body */}
             <div className="relative px-10 py-5 flex-auto">{body}</div>
             {/* Footer */}
-            <div className="flex flex-col gap-2 p-10 items-start ">
-              <div className="w-full">
-                <Button
-                  disabled={disabled}
-                  label={actionLabel}
-                  secondary
-                  fullWidth
-                  large
-                  onClick={handleSubmit}
-                />
+            {footer && (
+              <div className="flex flex-col gap-2 p-10 items-start ">
+                <div className="w-full">
+                  <Button
+                    disabled={disabled}
+                    label={actionLabel}
+                    secondary
+                    fullWidth
+                    large
+                    onClick={handleSubmit}
+                  />
+                </div>
+                {footer}
               </div>
-              {footer}
-            </div>
+            )}
           </div>
         </div>
       </div>

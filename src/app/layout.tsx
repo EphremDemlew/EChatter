@@ -12,6 +12,7 @@ import { ThemeProvider } from "next-themes";
 import Theme from "@/components/Theme";
 import { Suspense } from "react";
 import FollowLoading from "@/components/loading/FollowLoading";
+import ChatterModal from "@/components/modals/ChatterModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -36,6 +37,8 @@ export default function RootLayout({
             <Toaster position="top-right" />
             <LoginModal />
             <EditModal />
+            <ChatterModal />
+
             <RegisterModal />
             <div className="h-screen bg-white dark:bg-black overflow-y-scroll scrollbar-hide">
               <div className="container h-full mx-auto xl:px-26 max-w-6xl">

@@ -1,17 +1,34 @@
 "use client";
 
+import useCurrentUser from "@/hooks/useCurrentUser";
 import useLoginModal from "@/hooks/useLoginModal";
 import { useRouter } from "next/navigation";
 import { useCallback } from "react";
 import { FaFeather } from "react-icons/fa";
+import ChatterModal from "../modals/ChatterModal";
+import useChatterModal from "@/hooks/useChatterModal";
+import useRegisterModal from "@/hooks/useRegisterModal";
 
 function SidebarTweetBtn() {
   const router = useRouter();
   const loginModal = useLoginModal();
+  const registerModal = useRegisterModal();
+  const chatterModal = useChatterModal();
+
+  const { data: currentUser } = useCurrentUser();
 
   const onClick = useCallback(() => {
-    loginModal.onOpen();
-  }, [loginModal]);
+    if (!currentUser) {
+      loginModal.onOpen();
+    } else {
+      chatterModal.onOpen();
+      console.log(
+        "🚀 ~ file:  SidebarTweetBtn.tsx:23 ~ onClick ~ chatterModal:"
+      );
+
+      // loginModal.onOpen();
+    }
+  }, [loginModal, chatterModal, currentUser]);
 
   return (
     <div onClick={onClick}>
