@@ -28,9 +28,10 @@ function FollowBar() {
         <div className="rounded-xl p-4 w-72 dark:bg-[#16181C] bg-stone-500">
           <h1 className=" text-white  text-xl font-semibold">Who to follow</h1>
           <div className="flex flex-col gap-6 mt-4">
-            {users.map((user: Record<string, any>) => (
+            {users.slice(0, 5).map((user: Record<string, any>) => (
               <div key={user.id} className="flex gap-4 ">
                 <Avatar userId={user.id} />
+
                 <div className="flex flex-col">
                   <p className="text-white  font-semibold text-sm">
                     {user.name}
