@@ -30,3 +30,4 @@ export async function GET(req: NextRequest) {
     NextResponse.json({ error: error }, { status: 400 });
   }
 }
+export const dynamic = "force-dynamic";
