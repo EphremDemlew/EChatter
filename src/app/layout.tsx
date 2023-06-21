@@ -1,18 +1,15 @@
 import { Inter } from "next/font/google";
 import "@/styles/global.css";
 import Sidebar from "@/components/layout/Sidebar";
-import FollowBar from "@/components/layout/FollowBar";
 import LoginModal from "@/components/modals/LoginModal";
 import RegisterModal from "@/components/modals/RegisterModal";
 import EditModal from "@/components/modals/EditModal";
 
 import { Toaster } from "react-hot-toast";
 import Provider from "@/components/Provider";
-import { ThemeProvider } from "next-themes";
 import Theme from "@/components/Theme";
-import { Suspense } from "react";
-import FollowLoading from "@/components/loading/FollowLoading";
-import ChatterModal from "@/components/modals/ChatterModal";
+
+import SearchValue from "@/components/SearchValue";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,8 +34,6 @@ export default function RootLayout({
             <Toaster position="top-right" />
             <LoginModal />
             <EditModal />
-            <ChatterModal />
-
             <RegisterModal />
             <div className="h-screen bg-white dark:bg-black overflow-y-scroll scrollbar-hide">
               <div className="container h-full mx-auto xl:px-26 max-w-6xl">
@@ -50,9 +45,7 @@ export default function RootLayout({
                     {children}
                   </div>
                   <div>
-                    <Suspense fallback={<FollowLoading />}>
-                      <FollowBar />
-                    </Suspense>
+                    <SearchValue />
                   </div>
                 </div>
               </div>
