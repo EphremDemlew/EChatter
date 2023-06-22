@@ -18,9 +18,7 @@ const Avatar: React.FC<AvatarProps> = ({ userId, hasBorder, isLarge }) => {
     (event: any) => {
       event.stopPropagation();
 
-      const url = `/users/${userId}`;
-
-      router.push(url);
+      router.push(`/users/${userId}`);
     },
     [userId, router]
   );

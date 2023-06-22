@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import "@/styles/global.css";
 import Sidebar from "@/components/layout/Sidebar";
-import RightSideBar from "@/components/RightSideBar";
+import RightSideBar from "@/components/layout/RightSideBar";
 
 import LoginModal from "@/components/modals/LoginModal";
 import RegisterModal from "@/components/modals/RegisterModal";
