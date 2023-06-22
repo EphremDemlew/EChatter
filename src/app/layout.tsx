@@ -3,6 +3,7 @@ import "@/styles/global.css";
 import Sidebar from "@/components/layout/Sidebar";
 import LoginModal from "@/components/modals/LoginModal";
 import RegisterModal from "@/components/modals/RegisterModal";
+import ChatterModal from "@/components/modals/ChatterModal";
 import EditModal from "@/components/modals/EditModal";
 
 import { Toaster } from "react-hot-toast";
