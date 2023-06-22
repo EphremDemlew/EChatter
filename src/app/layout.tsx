@@ -1,6 +1,8 @@
 import { Inter } from "next/font/google";
 import "@/styles/global.css";
 import Sidebar from "@/components/layout/Sidebar";
+import RightSideBar from "@/components/RightSideBar";
+
 import LoginModal from "@/components/modals/LoginModal";
 import RegisterModal from "@/components/modals/RegisterModal";
 import ChatterModal from "@/components/modals/ChatterModal";
@@ -9,9 +11,6 @@ import EditModal from "@/components/modals/EditModal";
 import { Toaster } from "react-hot-toast";
 import Provider from "@/components/Provider";
 import Theme from "@/components/Theme";
-
-import RightSideBar from "@/components/RightSideBar";
-import ChatterModal from "@/components/modals/ChatterModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
