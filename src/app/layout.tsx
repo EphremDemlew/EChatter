@@ -3,6 +3,7 @@ import "@/styles/global.css";
 import Sidebar from "@/components/layout/Sidebar";
 import LoginModal from "@/components/modals/LoginModal";
 import RegisterModal from "@/components/modals/RegisterModal";
+import ChatterModal from "@/components/modals/ChatterModal";
 import EditModal from "@/components/modals/EditModal";
 
 import { Toaster } from "react-hot-toast";
@@ -34,6 +35,7 @@ export default function RootLayout({
             <Toaster position="top-right" />
             <LoginModal />
             <EditModal />
+           <ChatterModal />
             <RegisterModal />
             <div className="h-screen bg-white dark:bg-black overflow-y-scroll scrollbar-hide">
               <div className="container h-full mx-auto xl:px-26 max-w-6xl">
