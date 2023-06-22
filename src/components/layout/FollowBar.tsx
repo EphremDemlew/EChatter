@@ -15,11 +15,11 @@ function FollowBar({ searchKey }: { searchKey: string }) {
         {Array.from(Array(5), (e, i) => {
           return (
             <div key={i} className="flex gap-4 ">
-              <p className=" rounded-full bg-neutral-300 dark:bg-neutral-600 h-12 w-12"></p>
+              <p className=" rounded-full bg-neutral-200 dark:bg-neutral-600 h-12 w-12 animate-pulse"></p>
 
               <div className="flex flex-col gap-1">
-                <p className="h-6 w-16 bg-neutral-300 animate-pulse dark:bg-neutral-600 rounded"></p>
-                <p className="h-3 w-20 bg-neutral-300 animate-pulse dark:bg-neutral-600 rounded"></p>
+                <p className="h-6 w-16 bg-neutral-200 animate-pulse dark:bg-neutral-600 rounded"></p>
+                <p className="h-3 w-20 bg-neutral-200 animate-pulse dark:bg-neutral-600 rounded"></p>
               </div>
             </div>
           );

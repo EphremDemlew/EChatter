@@ -81,8 +81,8 @@ const Sidebar = () => {
           <SidebarTweetBtn />
         </div>
       </div>
-      <div className="flex flex-col justify-center items-center">
-        <div className="m-10  h-5">
+      <div className="flex flex-col justify-center items-center mb-14 md:mb-0 gap-2 sm:gap-5">
+        <div className="m-0 mb-5 md:m-10 h-5 ">
           <Switch
             checked={theme == "dark" ? true : false}
             onChange={() => setTheme(theme == "dark" ? "light" : "dark")}
@@ -98,7 +98,7 @@ const Sidebar = () => {
                   alt="sun.jpg"
                   className={`${
                     theme == "dark"
-                      ? "h-12 w-12 lg:-ml-2"
+                      ? " h-8 w-8 md:h-12 md:w-12 lg:-ml-2"
                       : "h-5 w-5 ml-2 hidden lg:block"
                   }  cursor-pointer transition duration-200 `}
                 />
@@ -107,7 +107,7 @@ const Sidebar = () => {
                   alt="halfMoon.jpg"
                   className={`${
                     theme == "light"
-                      ? "h-12 w-12"
+                      ? "h-8 w-8 md:h-12 md:w-12"
                       : "h-5 w-5 mx-2 hidden lg:block"
                   }  cursor-pointer transition duration-200 `}
                 />
@@ -116,8 +116,12 @@ const Sidebar = () => {
           </Switch>
         </div>
         {currentUser && (
-          <div className="flex justify-center  gap-4 mb-5">
-            <Avatar userId={currentUser?.currentUser?.id} />
+          <div className="flex justify-center  gap-4 mb-5 ">
+            <div className="relative ">
+              <p className="absolute top-0 -inset-2 orange_gradient backdrop:blur-md h-10 w-10 rounded-full"></p>
+
+              <Avatar userId={currentUser?.currentUser?.id} />
+            </div>
             <div className=" flex-col hidden lg:flex">
               <p className="text-black dark:text-white  font-semibold text-sm">
                 {currentUser?.currentUser?.name}

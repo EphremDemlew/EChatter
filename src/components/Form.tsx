@@ -72,8 +72,9 @@ const Form: React.FC<FormProps> = ({ placeholder, isComment, postId }) => {
               disabled={isLoading}
               onChange={(e) => setBody(e.target.value)}
               value={body}
-              className="disabled:opacity-80 peer resize-none mt-4 ring-0 w-full bg-white dark:bg-black 
-              outline-none text-[20px] placeholder-neutral-500 text-black dark:text-white "
+              className="disabled:opacity-80 peer resize-none mt-4 ring-0 w-full bg-neutral-200 px-5 py-4 dark:bg-neutral-900 
+              outline-none text-[20px] placeholder-neutral-500 text-black dark:text-white rounded"
+              rows={3}
               placeholder={placeholder}
             ></textarea>
             <hr className="opacity-0 peer-focus:opacity-100 h-[1px] w-full border-neural-400  dark:border-neutral-800 transition" />

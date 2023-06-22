@@ -9,7 +9,8 @@ import { Toaster } from "react-hot-toast";
 import Provider from "@/components/Provider";
 import Theme from "@/components/Theme";
 
-import SearchValue from "@/components/SearchValue";
+import RightSideBar from "@/components/RightSideBar";
+import ChatterModal from "@/components/modals/ChatterModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +35,7 @@ export default function RootLayout({
             <Toaster position="top-right" />
             <LoginModal />
             <EditModal />
+            <ChatterModal />
             <RegisterModal />
             <div className="h-screen bg-white dark:bg-black overflow-y-scroll scrollbar-hide">
               <div className="container h-full mx-auto xl:px-26 max-w-6xl">
@@ -45,7 +47,7 @@ export default function RootLayout({
                     {children}
                   </div>
                   <div>
-                    <SearchValue />
+                    <RightSideBar />
                   </div>
                 </div>
               </div>

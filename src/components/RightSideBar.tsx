@@ -6,11 +6,11 @@ import { BiSearch } from "react-icons/bi";
 import FollowBar from "./layout/FollowBar";
 import FollowLoading from "./loading/FollowLoading";
 
-const SearchValue = () => {
+const RightSideBar = () => {
   const [searchKey, setSearchKey] = useState("");
 
   return (
-    <div>
+    <div className="hidden lg:block fixed">
       <div className="dark:bg-[#16181C] bg-stone-500 rounded-full w-72 flex mx-5 justify-center items-center my-4 px-3 py-1 focus:outline-sky-500">
         <BiSearch
           size={28}
@@ -28,8 +28,8 @@ const SearchValue = () => {
       </div>
 
       <div className="flex flex-col">
-        <div className="px-6 py-4 hidden lg:block fixed">
-          <div className="rounded-xl p-4 w-72 dark:bg-[#16181C] bg-stone-500">
+        <div className="px-6 py-4 ">
+          <div className="rounded-xl p-4 w-72 dark:bg-[#16181C] bg-stone-400">
             <h1 className=" text-white  text-xl font-semibold">
               Who to follow
             </h1>
@@ -43,4 +43,4 @@ const SearchValue = () => {
   );
 };
 
-export default SearchValue;
+export default RightSideBar;
