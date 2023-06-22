@@ -9,6 +9,7 @@ export async function GET() {
 
     const posts = await prisma.post.findMany({
       select: { likedId: true },
+      orderBy: { likedId: "desc" },
     });
 
     console.log(posts);
