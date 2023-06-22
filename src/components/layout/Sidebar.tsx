@@ -117,11 +117,7 @@ const Sidebar = () => {
         </div>
         {currentUser && (
           <div className="flex justify-center  gap-4 mb-5 ">
-            <div className="relative ">
-              <p className="absolute top-0 -inset-2 orange_gradient backdrop:blur-md h-10 w-10 rounded-full"></p>
-
-              <Avatar userId={currentUser?.currentUser?.id} />
-            </div>
+            <Avatar userId={currentUser?.currentUser?.id} />
             <div className=" flex-col hidden lg:flex">
               <p className="text-black dark:text-white  font-semibold text-sm">
                 {currentUser?.currentUser?.name}
