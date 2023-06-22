@@ -12,10 +12,7 @@ const RightSideBar = () => {
   return (
     <div className="hidden lg:block fixed">
       <div className="dark:bg-[#16181C] bg-stone-500 rounded-full w-72 flex mx-5 justify-center items-center my-4 px-3 py-1 focus:outline-sky-500">
-        <BiSearch
-          size={28}
-          className="ml-3 text-orange-500 dark:text-gray-500 "
-        />
+        <BiSearch size={28} className="ml-3 text-white dark:text-gray-500 " />
         <input
           type="text"
           placeholder="Search EChatters"
