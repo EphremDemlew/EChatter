@@ -35,10 +35,7 @@ const LoginModal: FC<LoginModalProps> = ({}) => {
         email,
         password,
       });
-      console.log(
-        "🚀 ~ file: LoginModal.tsx:38 ~ onSubmit ~ isSigned:",
-        isSigned
-      );
+
       if (isSigned?.error === "Invalid credentials") {
         setIsError(true);
         setPassword("");
