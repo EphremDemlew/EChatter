@@ -9,7 +9,6 @@ import useTrendingUsers from "@/hooks/useTrendingUsers";
 
 function TrendingItem() {
   const { data: users = [], isLoading, error } = useTrendingUsers();
-  console.log("🚀 ~ file: TrendingItem.tsx:12 ~ TrendingItem ~ users:", users);
 
   if (isLoading) {
     return (
