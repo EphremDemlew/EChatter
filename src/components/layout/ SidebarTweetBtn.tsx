@@ -22,11 +22,6 @@ function SidebarTweetBtn() {
       loginModal.onOpen();
     } else {
       chatterModal.onOpen();
-      console.log(
-        "🚀 ~ file:  SidebarTweetBtn.tsx:23 ~ onClick ~ chatterModal:"
-      );
-
-      // loginModal.onOpen();
     }
   }, [loginModal, chatterModal, currentUser]);
 
