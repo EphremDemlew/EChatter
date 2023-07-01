@@ -25,10 +25,7 @@ const ChatterModal: FC<ChatterProps> = ({}) => {
         redirect: false,
         post,
       });
-      console.log(
-        "🚀 ~ file: LoginModal.tsx:38 ~ onSubmit ~ isSigned:",
-        isSigned
-      );
+
       if (isSigned?.error === "Invalid credentials") {
         setIsError(true);
         toast.custom((t) => (

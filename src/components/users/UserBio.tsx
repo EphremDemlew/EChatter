@@ -16,7 +16,6 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
   const editModal = useEditModal();
 
   const { isFollowing, toggleFollow } = useFollow(userId);
-  console.log("🚀 ~ file: UserBio.tsx:16 ~ fetchedUser:", isFollowing);
 
   const createdAt = useMemo(() => {
     if (!fetchedUser?.createdAt) {
